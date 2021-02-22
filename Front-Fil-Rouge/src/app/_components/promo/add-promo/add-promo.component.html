@@ -1,0 +1,212 @@
+<div class="container">
+  <form class="container-fluid justify-content-center">
+    <div class="form-group row m-1">
+
+      <label class="col-3 float-left  m-3" for="langue">Langue</label>
+
+      <select name="langue"  class="float-right form-control col-8 m-1" id="langue"
+              [(ngModel)]="promo.langue" #langue="ngModel"
+              [ngClass]="{'is-invalid': langue.touched && !langue.valid}"
+      >
+        <option>Anglais</option>
+        <option selected>Français</option>
+      </select>
+      <div class="invalid-feedback">
+                <span *ngIf="langue.errors">
+                  Libelle invalide <i class="fas fa-angry"></i>
+                </span>
+      </div>
+
+    </div>
+    <div class="form-group row m-1">
+      <label  class="col-3 float-left  m-3" for="titre">titre</label>
+      <input required class="float-right form-control col-8 m-1" #titre= "ngModel" type="text" name="titre"
+             [(ngModel)]="promo.titre" #titre="ngModel"
+             placeholder="titre de la promo" id="titre"
+             [ngClass]="{'is-invalid': titre.touched && !titre.valid}"
+      >
+      <div class="invalid-feedback row text-center">
+                <span *ngIf="titre.errors">
+                  titre invalide <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+    <div class="form-group row m-1">
+      <label  class="col-3 float-left  m-3" for="description">Description </label>
+      <textarea required class="float-right form-control col-8 m-1" type="text" name="description"
+                [(ngModel)]="promo.description" #description="ngModel"
+                placeholder="Description de la promo" id="description"
+                [ngClass]="{'is-invalid': description.touched && !description.valid}"
+      ></textarea>
+      <div class="invalid-feedback row text-center">
+                <span *ngIf="titre.errors">
+                  Description invalide <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+    <div class="form-group row ">
+
+      <div class="col-6">
+        <div class="form-group row">
+          <label for="dateDebut" class="col-4 col-form-label">Date début</label>
+          <div class="col-8">
+            <input required class="form-control" type="date"  id="dateDebut"
+                   #dateDebut= "ngModel" name="dateDebut"
+                   [(ngModel)]="promo.dateDebut"
+                   [ngClass]="{'is-invalid': dateDebut.touched && !dateDebut.valid}"
+            >
+          </div>
+        </div>
+        <div class="invalid-feedback border border-dark text-center">
+                <span *ngIf="dateDebut.errors">
+                  Date de debut obligatoire<i class="fas fa-angry"></i>
+                </span>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="form-group row">
+          <label for="dateFin" class="col-4 col-form-label">Date début</label>
+          <div class="col-8">
+            <input required class="form-control" type="date"  id="dateFin"
+                   #dateFin= "ngModel" name="dateFin"
+                   [(ngModel)]="promo.dateFin"
+                   [ngClass]="{'is-invalid': dateFin.touched && !dateFin.valid}"
+            >
+          </div>
+        </div>
+        <div class="invalid-feedback border border-dark text-center">
+                <span *ngIf="dateFin.errors">
+                  Date de debut obligatoire<i class="fas fa-angry"></i>
+                </span>
+        </div>
+      </div>
+
+    </div>
+    <div class="card mb-3" >
+      <div class="card-body">
+        <h4 class="card-title">Les Referentiels de la promo</h4>
+        <span class="bg-info border-4">
+          Referent digital
+          <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+        </span>
+        <span class="bg-info border-4">
+          Referent digital
+          <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+        </span>
+        <span class="bg-info border-4">
+          Referent digital
+          <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+        </span>
+      </div>
+      <div class="card-footer " >
+        <div class="row justify-content-center">
+          <button class="col-3  m-1 btn-lg btn-outline-dark">Referent Digital</button>
+          <button class="col-3  m-1 btn-lg btn-outline-dark">Data Scientist</button>
+          <button class="col-3  m-1 btn-lg btn-outline-dark">Developpeur web</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+
+        <div class="form-group m-3">
+          <label  for="addOneStudent">Ajout apprenant manuellement dans la promo</label>
+          <input class="form-control " type="text" name="addOneStudent" id="addOneStudent"
+                 placeholder="Ajout apprenant manuellement dans la promo">
+          <div class="invalid-feedback row ">
+
+          </div>
+          <button class="btn btn-outline-primary mt-2">Ajouter</button>
+
+        </div>
+        <div class="form-group ">
+          <textarea class="form-control row m-auto col-12"></textarea>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class=" m-2">
+          <label for="addApprenants">Ajouter la liste des apprenants</label>
+          <input type="file" class="form-control-file" id="addApprenants">
+
+        </div>
+        <div class="scrollable">
+          <table class="table">
+            <thead class="bg-dark">
+            <tr>
+              <th scope="col-1">N°</th>
+              <th scope="col-9">Email</th>
+              <th scope="col-2">reload</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>apprenant@apprenant.com</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>apprenant@apprenant.com</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>apprenant@apprenant.com</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>apprenant@apprenant.com</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <th><i class="fas fa-sync-alt"></i></th>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

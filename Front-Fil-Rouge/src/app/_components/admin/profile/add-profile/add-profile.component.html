@@ -1,0 +1,14 @@
+<h3 class="mt-3">Ajouter un nouveau profil</h3>
+<form novalidate class="form-group" [formGroup]="addProfileForm" (ngSubmit)="onAddProfile()">
+
+  <div class="form-group">
+    <label class="form-row" for="libelle">Libelle du profil</label>
+    <input required class="form-control" type="text" formControlName="libelle"
+           placeholder="Libelle" id="libelle">
+    <div *ngIf="isValidInput( 'libelle')" class="text-danger">
+        Profil non renseigné !!!
+    </div>
+  </div>
+  <button [disabled]="addProfileForm.invalid" class="btn btn-outline-primary float-right mb-2 " type="submit" [innerHTML]="value()"></button>
+</form>
+

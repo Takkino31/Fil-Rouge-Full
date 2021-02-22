@@ -1,0 +1,55 @@
+<?php //%255BApp%255CEntity%255CCompetence%2524libelle%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Symfony\\Component\\Serializer\\Annotation\\Groups'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Annotation\\Groups')),
+        clone $p['Symfony\\Component\\Serializer\\Annotation\\Groups'],
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'length' => [
+                255,
+            ],
+            'message' => [
+                3 => ' le champ libellé de la compétence est nul !',
+            ],
+            'groups' => [
+                3 => [
+                    'Default',
+                ],
+            ],
+        ],
+        'Symfony\\Component\\Serializer\\Annotation\\Groups' => [
+            'groups' => [
+                1 => [
+                    'read:_skills',
+                    'read:_skill_only',
+                    'read:groupes_skills',
+                    'read:skill_groupes_skills',
+                    'read:skill_groupes_skills',
+                    'read:referentiels_grp_skills',
+                    'read:referentiel_only',
+                    'read:referentiel_skills_only',
+                    'read:skill_of_grp_skills',
+                ],
+                [
+                    'create:_skills',
+                    'update:_skill_only',
+                    'delete:_skill_only',
+                    'create:groupes_skills',
+                    'update:groupes_skills',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

@@ -1,0 +1,48 @@
+<nav class="row navbar navbar-expand-xl navbar-dark bg-dark sticky-top" data-spy="affix" data-offset-top="197">
+  <a href="#" class="navbar-brand"><i class="fa fa-cube"></i>STREET<b>KNOWLEDGE</b></a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" (click)="show()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Collection of nav links, forms, and other content for toggling -->
+  <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start" [ngClass]="{'show':visibility}">
+    <form class="navbar-form form-inline">
+      <div class="input-group search-box">
+        <input type="text" id="search" class="form-control" placeholder="Search here...">
+        <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+      </div>
+    </form>
+    <div class="navbar-nav ml-auto mt-2">
+      <div class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle "><i class="fas fa-user-cog"></i> Paramètres </a>
+        <div class="dropdown-menu">
+          <a [routerLink]="['/admin/promo/add-promo']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i><span> Promo</span></a>
+          <a [routerLink]="['/admin/referential/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i> <span> Referential</span></a>
+          <a [routerLink]="['/admin/group-skills/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i> <span> Groups Skills </span> </a>
+          <a [routerLink]="['/admin/skill/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i> <span> Skills </span></a>
+          <a [routerLink]="['/admin/profil-sortie/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i> <span> Output Profile </span></a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle "><i class="fas fa-user-cog"></i> Users</a>
+        <div class="dropdown-menu">
+          <a [routerLink]="['/admin/users/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i><span> Users</span></a>
+          <a [routerLink]="['/admin/profil/list']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown-item"><i class="fa fa-calendar-o"></i> <span> Profils</span></a>
+        </div>
+      </div>
+
+
+      <a  class="nav-item nav-link"><i class="fa fa-envelope"> Message</i></a>
+      <a  class="nav-item nav-link"><i class="fa fa-bell"> Notifications</i></a>
+      <div class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="/assets/logo/logo4.jpg/" style="width: 50px; height: 30px" class="rounded-circle" alt="Avatar"> Doro<b class="caret"></b></a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+          <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+          <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+          <div class="divider dropdown-divider"></div>
+          <a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

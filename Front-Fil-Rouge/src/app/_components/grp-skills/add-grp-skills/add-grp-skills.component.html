@@ -1,0 +1,45 @@
+<h2>Add or Update a skill's group</h2>
+<div>
+  <form class="form-group  m-2" [formGroup]="addGrpSkillsForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label class="form-row">Libelle</label>
+      <input required class="form-control" type="text" formControlName="libelle"
+             placeholder="Libelle du groupe de competences" id="libelle"
+      >
+      <div *ngIf="isValidInput('libelle')" class="text-danger">
+           Libelle invalide <i class="fas fa-angry"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-row">Descriptif</label>
+      <textarea required class="form-control" type="text" formControlName="descriptif"
+              placeholder="Libelle du groupe de competences" id="descriptif"
+      >
+    </textarea>
+      <div *ngIf="isValidInput('descriptif')" class="text-danger">
+            Descriptif invalide <i class="fas fa-angry"></i>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Affectez un groupe de competence à la competence à creer</label>
+      <ng-multiselect-dropdown
+        [placeholder]="'Les competences'"
+        [data]="dropdownList"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        formControlName="skills"
+      >
+      </ng-multiselect-dropdown>
+      <div class="text-danger" *ngIf="isValidInput('skills')">
+          Must have at least one skill<i class="fas fa-angry"></i>
+      </div>
+    </div>
+    <button  class="btn btn-outline-primary mt-3 justify-content-center" type="submit" [innerHTML]="value()">
+    </button>
+  </form>
+
+</div>

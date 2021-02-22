@@ -1,0 +1,116 @@
+<?php //%255BApp%255CEntity%255CGroupeCompetence%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\GroupeCompetenceRepository',
+            ],
+            'message' => [
+                1 => 'Ce libellé existe déjà pour une autre compétence.',
+            ],
+            'fields' => [
+                1 => [
+                    'libelle',
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+            ],
+            'filterClass' => [
+                2 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\BooleanFilter',
+            ],
+            'properties' => [
+                2 => [
+                    'isDrop',
+                ],
+            ],
+            'collectionOperations' => [
+                3 => [
+                    'get_groupes_skills' => [
+                        'method' => 'GET',
+                        'path' => '/groupecompetences',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:groupes_skills',
+                            ],
+                        ],
+                        'security' => 'is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                    'get_skill_groupes_skills' => [
+                        'method' => 'GET',
+                        'path' => '/groupecompetences/competences',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:skill_groupes_skills',
+                            ],
+                        ],
+                        'security' => 'is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                    'post_groupes_skills' => [
+                        'method' => 'POST',
+                        'path' => '/groupecompetences',
+                        'normalization_context' => [
+                            'groups' => [
+                                'create:groupes_skills',
+                            ],
+                        ],
+                        'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                3 => [
+                    'get_groupes_skills' => [
+                        'method' => 'GET',
+                        'path' => '/groupecompetences/{id}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:skill_of_grp_skills',
+                            ],
+                        ],
+                        'security' => 'is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                    'put_groupes_skills' => [
+                        'method' => 'PUT',
+                        'path' => '/groupecompetences/{id}',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'update:groupes_skills',
+                            ],
+                        ],
+                        'security' => 'is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                    'delete_groupes_skills' => [
+                        'method' => 'DELETE',
+                        'path' => '/groupecompetences/{id}',
+                        'security' => 'is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_CM\')',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                3 => [
+                    'security_message' => 'Vous n\'avez pas accès à cette ressource',
+                    'pagination_items_per_page' => 500,
+                    'route_prefix' => '/admin',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

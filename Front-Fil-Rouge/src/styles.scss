@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&display=swap');
+$bg : #e9e8ea;
+$font-color-primary : #673AB7;
+body{
+  background-color: #F6F4F5;
+  font-family: 'Baloo Chettan 2', cursive;
+  color: $font-color-primary;
+  overflow-x: hidden;
+}

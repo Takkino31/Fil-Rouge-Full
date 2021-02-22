@@ -1,0 +1,97 @@
+<?php //App_Entity_Referentiel
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Referentiel',
+                'id',
+                'libelle',
+                'presentation',
+                'programme',
+                'critereEvaluation',
+                'critereAdmission',
+                'isDrop',
+                'groupeCompetences',
+                'promos',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'libelle' => $o[2],
+                    'presentation' => $o[3],
+                    'programme' => $o[4],
+                    'critereEvaluation' => $o[5],
+                    'critereAdmission' => $o[6],
+                    'isDrop' => $o[7],
+                    'groupeCompetences' => $o[8],
+                    'promos' => $o[9],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'read:referentiels',
+                    'read:referentiel_only',
+                    'create:referentiel',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiel_only',
+                    'create:referentiel',
+                    'update:referentiel',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiel_only',
+                    'create:referentiel',
+                    'update:referentiel',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiel_only',
+                    'create:referentiel',
+                    'update:referentiel',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiel_only',
+                    'create:referentiel',
+                    'update:referentiel',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiel_only',
+                    'create:referentiel',
+                    'update:referentiel',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiels_grp_skills',
+                ],
+                [
+                    'read:referentiels',
+                    'read:referentiels_grp_skills',
+                    'read:referentiel_only',
+                    'read:referentiel_skills_only',
+                    'create:referentiel',
+                    'update:referentiel',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

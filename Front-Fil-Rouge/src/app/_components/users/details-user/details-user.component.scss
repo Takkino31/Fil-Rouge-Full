@@ -1,0 +1,16 @@
+.custom-file-input.selected:lang(en)::after {
+  content: "" !important;
+}
+
+.custom-file {
+  overflow: hidden;
+}
+
+.custom-file-input {
+  white-space: nowrap;
+}
+
+.icon-avatar{
+  width: 70px;
+  height: 70px;
+}

@@ -1,0 +1,87 @@
+<?php //%255BApp%255CEntity%255CProfil%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\ProfilRepository',
+            ],
+            'filterClass' => [
+                1 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\BooleanFilter',
+            ],
+            'properties' => [
+                1 => [
+                    'isDrop',
+                ],
+            ],
+            'fields' => [
+                2 => 'libelle',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                ],
+            ],
+            'collectionOperations' => [
+                3 => [
+                    'get_profils' => [
+                        'method' => 'GET',
+                        'path' => '/profils',
+                        'normalizationContext' => [
+                            'groups' => [
+                                'read_all',
+                            ],
+                        ],
+                    ],
+                    'add_profil' => [
+                        'method' => 'POST',
+                        'path' => '/profils',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                3 => [
+                    'get_profil' => [
+                        'method' => 'GET',
+                        'path' => '/profils/{id}',
+                    ],
+                    'put_profil' => [
+                        'method' => 'PUT',
+                        'path' => '/profils/{id}',
+                    ],
+                    'delete_profil' => [
+                        'method' => 'DELETE',
+                        'path' => '/profils/{id}',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                3 => [
+                    'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    'security_message' => 'Vous n\'avez pas acces à cette ressource',
+                    'normalization_context' => [
+                        'groups' => [
+                            'profil:read',
+                            'profil_users:read',
+                        ],
+                    ],
+                    'route_prefix' => '/admin',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

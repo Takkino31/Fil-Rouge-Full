@@ -1,0 +1,122 @@
+<?php //%255BApp%255CEntity%255CUser%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['Doctrine\\ORM\\Mapping\\InheritanceType'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\InheritanceType')),
+        clone ($p['Doctrine\\ORM\\Mapping\\DiscriminatorColumn'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\DiscriminatorColumn')),
+        clone ($p['Doctrine\\ORM\\Mapping\\DiscriminatorMap'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\DiscriminatorMap')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone $p['ApiPlatform\\Core\\Annotation\\ApiFilter'],
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\UserRepository',
+            ],
+            'fields' => [
+                1 => [
+                    'username',
+                    'email',
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+            ],
+            'value' => [
+                2 => 'JOINED',
+                4 => [
+                    'user' => 'User',
+                    'admin' => 'Admin',
+                    'formateur' => 'Formateur',
+                    'cm' => 'Cm',
+                    'apprenant' => 'Apprenant',
+                ],
+            ],
+            'name' => [
+                3 => 'type',
+            ],
+            'type' => [
+                3 => 'string',
+            ],
+            'filterClass' => [
+                5 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\BooleanFilter',
+                'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\SearchFilter',
+            ],
+            'properties' => [
+                5 => [
+                    'isDrop',
+                ],
+                [
+                    'profil.libelle',
+                ],
+            ],
+            'collectionOperations' => [
+                7 => [
+                    'get_users' => [
+                        'method' => 'GET',
+                        'path' => 'admin/users',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:users',
+                            ],
+                        ],
+                    ],
+                    'add_users' => [
+                        'method' => 'POST',
+                        'path' => 'admin/users',
+                        'route_name' => 'add_user',
+                    ],
+                    'get_users_nbr' => [
+                        'method' => 'GET',
+                        'path' => 'admin/nbrusers',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                7 => [
+                    'get_user' => [
+                        'method' => 'GET',
+                        'path' => 'admin/users/{id}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:user_only',
+                            ],
+                        ],
+                    ],
+                    'put_user' => [
+                        'method' => 'PUT',
+                        'path' => 'admin/users/{id}',
+                    ],
+                    'delete_user' => [
+                        'method' => 'DELETE',
+                        'path' => 'admin/users/{id}',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                7 => [
+                    'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    'security_message' => 'Vous n\'avez pas accès à cette ressource',
+                    'pagination_items_per_page' => 8,
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+        $o[4],
+        $o[5],
+        $o[6],
+        $o[7],
+    ],
+    []
+); }];

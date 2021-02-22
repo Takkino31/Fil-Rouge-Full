@@ -1,0 +1,46 @@
+<div class="row m-2">
+  <div class="col-8">
+    <h4>Liste des Utilisateurs</h4>
+  </div>
+  <div class="col-4">
+    <a [routerLink]="['/admin/users/add-user']" routerLinkActive="active"
+       class="btn btn-outline-dark float-right">
+      Ajouter <i class="fas fa-user-plus"></i>
+    </a>
+  </div>
+</div>
+<div class=" row">
+  <table class="table justify-content-center">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Avatar</th>
+      <th scope="col">Nom Prenom </th>
+<!--      <th scope="col"></th>-->
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody class="justify-content-center">
+    <tr *ngFor="let user of users; let i = index;">
+      <td>
+        <img src="data:image/jpeg;base64,{{user.avatar}}" class="rounded-circle icon-avatar" alt="avatar" >
+      </td>
+      <td>{{user.nom | uppercase}} {{user.prenom | titlecase}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td><span [routerLink]="['/admin/users/edit-user',user.id]"class="btn btn-outline-info"><i class="fas fa-edit"></i></span></td>
+      <td (click)="onDelete(user.id)"><span class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="btn-toolbar justify-content-center m-3" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" (click)="getPreviousPage()" class="btn btn-outline-primary"><<</button>
+    <button type="button" (click)="getNextPage()" class="btn btn-outline-primary">>></button>
+  </div>
+</div>

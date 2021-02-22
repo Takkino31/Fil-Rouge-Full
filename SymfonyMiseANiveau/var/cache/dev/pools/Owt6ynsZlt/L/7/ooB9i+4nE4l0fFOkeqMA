@@ -1,0 +1,61 @@
+<?php //App_Entity_Tag
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Tag',
+                'id',
+                'descriptif',
+                'isDrop',
+                'groupeTags',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'descriptif' => $o[2],
+                    'isDrop' => $o[3],
+                    'groupeTags' => $o[4],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'read:_tags',
+                    'read:_tag',
+                    'read:_grptags',
+                    'read:_grptag',
+                ],
+                [
+                    'read:_tags',
+                    'read:_tag',
+                    'create:_tag',
+                    'read:_grptags',
+                    'read:_grptag',
+                    'create:_tags',
+                    'update:_tag',
+                    'delete:_tag',
+                    'create:_grptags',
+                    'update:_grptag',
+                    'delete:_grptag',
+                ],
+                [
+                    'read:_tags',
+                    'read:_tag',
+                    'read:_grptags',
+                    'read:_grptag',
+                    'update:_grptag',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

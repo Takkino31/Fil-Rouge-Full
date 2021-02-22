@@ -1,0 +1,84 @@
+<h2>Add referential works!</h2>
+<div class="card">
+  <form novalidate class="form-group  m-2">
+
+    <div class="form-group">
+      <label for="libelle" class="form-row">Libelle</label>
+      <input required class=" form-control" type="text" name="libelle" [(ngModel)]="referential.libelle"
+             placeholder="Libelle du groupe de competences" id="libelle"
+             #libelle="ngModel" [ngClass]="{'is-invalid': libelle.touched && !libelle.valid}"
+      >
+      <div class="invalid-feedback">
+                <span *ngIf="libelle.errors">
+                  Libelle invalide <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="presentation" class="form-row">Presentation</label>
+      <textarea required class=" form-control"type="text" name="presentation" [(ngModel)]="referential.presentation"
+                placeholder="presentation du réferential" id="presentation"
+                #presentation="ngModel" [ngClass]="{'is-invalid': presentation.touched && !presentation.valid}"
+      >
+    </textarea>
+      <div class="invalid-feedback">
+                <span *ngIf="presentation.errors">
+                  Presentation invalide <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="grpCompetences" class="form-row">Competences</label>
+      <textarea required class=" form-control" type="text" name="grpCompetences" [(ngModel)]="referential.grpCompetences"
+                placeholder="Competences du referentiel" id="grpCompetences"
+                #grpCompetences="ngModel" [ngClass]="{'is-invalid': grpCompetences.touched && !grpCompetences.valid}"
+      >
+    </textarea>
+      <div class="invalid-feedback">
+                <span *ngIf="grpCompetences.errors">
+                  Must have at least one groupSkills <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="grpCompetences" class="form-row">Criteres d'evaluation</label>
+      <textarea required class=" form-control" type="text" name="criteresEvaluation" [(ngModel)]="referential.criteresEvaluation"
+                placeholder="Criteres d'evaluation" id="criteresEvaluation"
+                #criteresEvaluation="ngModel" [ngClass]="{'is-invalid': criteresEvaluation.touched && !criteresEvaluation.valid}"
+      >
+    </textarea>
+      <div class="invalid-feedback">
+                <span *ngIf="criteresEvaluation.errors">
+                  Criteres d'évaluation <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="grpCompetences" class="form-row">Criteres d'admission</label>
+      <textarea required class=" form-control" type="text" name="criteresAdmission" [(ngModel)]="referential.criteresAdmission"
+                placeholder="Criteres d'admission" id="criteresAdmission"
+                #criteresAdmission="ngModel" [ngClass]="{'is-invalid': criteresAdmission.touched && !criteresAdmission.valid}"
+      >
+    </textarea>
+      <div class="invalid-feedback">
+                <span *ngIf="criteresAdmission.errors">
+                  Criteres d'évaluation <i class="fas fa-angry"></i>
+                </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputFile">Programme</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+    </div>
+    <button class="btn btn-outline-primary float-right">Creer</button>
+
+  </form>
+
+</div>

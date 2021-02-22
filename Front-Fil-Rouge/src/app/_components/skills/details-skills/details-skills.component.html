@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-8">
+    <h3>{{skillToReceive.libelle}}</h3>
+  </div>
+  <div class="col-2 mt-4 text-right">
+    <button  [routerLink]="['/admin/skill/edit-skill',skillToReceive.id]" class="btn btn-outline-info"><i class="far fa-edit"></i></button>
+  </div>
+  <div class="col-2 mt-4 text-right">
+    <button (click)="onDeleteSkill(skillToReceive.id)" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+  </div>
+</div>
+<span>modifier</span>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#niv1">Niveau 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#niv2">Niveau 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#niv3">Niveau 3</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="row tab-pane fade active show" id="niv1">
+    <div class="">
+      <h2>Groupes d'action</h2>
+      <p>
+        {{skillToReceive.niveaux[0].groupeAction}}
+      </p>
+    </div>
+    <div class="">
+      <h2>Criteres d'évaluation</h2>
+      <p>
+        {{skillToReceive.niveaux[0].critereEvaluation}}
+      </p>
+    </div>
+  </div>
+  <div class="row tab-pane fade" id="niv2">
+    <div class="">
+      <h2>Groupes d'actions</h2>
+      <p>
+        {{skillToReceive.niveaux[1].groupeAction}}
+      </p>
+    </div>
+    <div class="">
+      <h2>Criteres d'evaluation</h2>
+      <p>
+        {{skillToReceive.niveaux[1].critereEvaluation}}
+      </p>
+    </div>
+  </div>
+  <div class="row tab-pane fade" id="niv3">
+    <div class="">
+      <h2>Groupes d'actions</h2>
+      <p>
+        {{skillToReceive.niveaux[2].groupeAction}}
+      </p>
+    </div>
+    <div class="">
+      <h2>Criteres d'évaluation</h2>
+      <p>
+        {{skillToReceive.niveaux[2].critereEvaluation}}
+      </p>
+    </div>
+  </div>
+</div>

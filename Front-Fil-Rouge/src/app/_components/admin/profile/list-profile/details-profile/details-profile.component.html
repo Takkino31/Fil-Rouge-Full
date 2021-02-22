@@ -1,0 +1,23 @@
+
+
+<div class="scrollable">
+  <table class="table justify-content-center">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Libelle </th>
+      <th scope="col">lister</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let profile of profiles">
+      <td class="">{{profile.libelle}}</td>
+      <td><span class="btn btn-outline-dark"><i class="fas fa-users"></i></span></td>
+      <td><span class="btn btn-outline-info"><i class="fas fa-edit"></i></span></td>
+      <td><span class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></span></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

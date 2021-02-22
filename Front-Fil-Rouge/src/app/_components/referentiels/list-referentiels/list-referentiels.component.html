@@ -1,0 +1,9 @@
+<div class="row ">
+  <h1 class="col-8">Liste referentiels</h1>
+  <div class="col-4 input-group search-box">
+    <input type="text" id="search" class="form-control" placeholder="Search here...">
+  </div>
+</div>
+<div class="row justify-content-center scrollable">
+  <app-details-referentiel  *ngFor="let referential of referentials" [referential]="referential" class="col-md-3 col-sm-10 m-1"></app-details-referentiel>
+</div>

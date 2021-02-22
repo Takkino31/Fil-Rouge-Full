@@ -1,0 +1,101 @@
+<?php //%255BApp%255CEntity%255CGroupeTag%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\GroupeTagRepository',
+            ],
+            'filterClass' => [
+                1 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\BooleanFilter',
+            ],
+            'properties' => [
+                1 => [
+                    'isDrop',
+                ],
+            ],
+            'message' => [
+                2 => 'Ce libellé existe déjà pour un autre groupe de tag.',
+            ],
+            'fields' => [
+                2 => [
+                    'libelle',
+                ],
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                ],
+            ],
+            'collectionOperations' => [
+                3 => [
+                    'get_grp_tags' => [
+                        'method' => 'GET',
+                        'path' => '/grptags',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:_grptags',
+                            ],
+                        ],
+                    ],
+                    'add_grp_tags' => [
+                        'method' => 'POST',
+                        'path' => '/grptags',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'create:_grptags',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                3 => [
+                    'get_grptag' => [
+                        'method' => 'GET',
+                        'path' => '/grptags/{id}',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'read:_grptag',
+                            ],
+                        ],
+                    ],
+                    'put_grptag' => [
+                        'method' => 'PUT',
+                        'path' => '/grptags/{id}',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'update:_grptag',
+                            ],
+                        ],
+                    ],
+                    'delete_grptag' => [
+                        'method' => 'DELETE',
+                        'path' => '/grptags/{id}',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                3 => [
+                    'security' => 'is_granted(\'ROLE_FORMATEUR\')',
+                    'security_message' => 'Vous n\'avez pas accès à cette ressource',
+                    'route_prefix' => '/admin',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

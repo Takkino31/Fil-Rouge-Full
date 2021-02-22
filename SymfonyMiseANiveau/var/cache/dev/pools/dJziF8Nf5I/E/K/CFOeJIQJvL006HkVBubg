@@ -1,0 +1,120 @@
+<?php //%255BApp%255CEntity%255CReferentiel%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiFilter'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiFilter')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\ReferentielRepository',
+            ],
+            'message' => [
+                1 => 'Ce libellé existe déjà pour un autre réferentiel .',
+            ],
+            'fields' => [
+                1 => [
+                    'libelle',
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+            ],
+            'filterClass' => [
+                2 => 'ApiPlatform\\Core\\Bridge\\Doctrine\\Orm\\Filter\\BooleanFilter',
+            ],
+            'properties' => [
+                2 => [
+                    'isDrop',
+                ],
+            ],
+            'collectionOperations' => [
+                3 => [
+                    'get_referentiels' => [
+                        'method' => 'GET',
+                        'path' => '/referentiels',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:referentiels',
+                            ],
+                        ],
+                    ],
+                    'get_grpskills_referentiels' => [
+                        'method' => 'GET',
+                        'path' => '/referentiels/groupecompetences',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:referentiels_grp_skills',
+                            ],
+                        ],
+                    ],
+                    'add_referentiels' => [
+                        'method' => 'POST',
+                        'path' => '/referentiels',
+                        'normalization_context' => [
+                            'groups' => [
+                                'create:referentiel',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                3 => [
+                    'get_referentiel' => [
+                        'method' => 'GET',
+                        'path' => '/referentiels/{id}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:referentiel_only',
+                            ],
+                        ],
+                    ],
+                    'get_referentiel_grp_skills_only' => [
+                        'method' => 'GET',
+                        'path' => '/referentiels/{id_ref}/groupecompetences/{id_grp_skills}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:referentiel_skills_only',
+                            ],
+                        ],
+                    ],
+                    'put_referentiels' => [
+                        'method' => 'PUT',
+                        'path' => '/referentiels/{id}',
+                        'denormalization_context' => [
+                            'groups' => [
+                                'update:referentiel',
+                            ],
+                        ],
+                    ],
+                    'delete_referentiel' => [
+                        'method' => 'DELETE',
+                        'path' => '/referentiels/{id}',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                3 => [
+                    'security_message' => 'Vous n\'avez pas accès à cette ressource',
+                    'security' => 'is_granted(\'ROLE_FORMATEUR\')',
+                    'pagination_items_per_page' => 500,
+                    'route_prefix' => '/admin',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

@@ -1,0 +1,88 @@
+<div class="container">
+<h3 class="card-title card-header m-2">Add or Edit User</h3>
+<form class="form-group"  [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group" >
+    <input required class="form-control" type="text" placeholder="Nom"
+           id="nom" formControlName="nom" value="userToUpdate.username"
+
+    >
+      <div *ngIf="isValidInput('nom')">
+        <div *ngIf="addUserForm.controls['nom'].errors.required">
+          Le nom est obligatoire.
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <input required class="form-control" type="text" formControlName ="prenom"
+           placeholder="Prenom" id="prenom" >
+    <div *ngIf="isValidInput('prenom')">
+      <div *ngIf="addUserForm.controls['prenom'].errors.required">
+        Le prenom est obligatoire.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input required class="form-control" type="text" formControlName ="username"
+           placeholder="username" id="username"
+
+    >
+    <div *ngIf="isValidInput('username')">
+      <div *ngIf="addUserForm.controls['username'].errors.required">
+        Username est obligatoire.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" *ngIf="userToUpdate">
+    <input required class="form-control" type="password" formControlName ="password"
+           placeholder="password" id="password">
+    <div *ngIf="isValidInput('password')">
+      <div *ngIf="addUserForm.controls['password'].errors.required">
+        Le password est obligatoire.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input required class="form-control"  type="email" formControlName="email"
+           placeholder="Email" id="email" >
+    <div *ngIf="isValidInput('email')">
+      <div *ngIf="addUserForm.controls['email'].errors.required">
+        L'Email est obligatoire.
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-file mt-2 form-group">
+    <label class="custom-file-label" for="customInput">let's choose a picture</label>
+    <input type="file" accept=".jpg,.jpeg,.png" class="custom-file-input" id="customInput"
+           formControlName="avatar" (change)="onFileSelect($event)" (change)="getPath($event)">
+  </div>
+  <div *ngIf="showAvatar('avatar')" class="form-row mt-2 justify-content-center" >
+    <img src="{{localUrl}}" class="rounded-circle icon-avatar border border-primary" alt="Avatar">
+  </div>
+
+  <div class="form-group">
+    <label>Type d'Utilisateur</label>
+    <select formControlName="profil" id="profil" class="form-control">
+      <option value="{{profile.libelle}}" *ngFor="let profile of profiles" >{{profile.libelle}}</option>
+    </select>
+    <div  *ngIf="isValidInput('profil')">
+      <div *ngIf="addUserForm.controls['profil'].errors.required">
+        Le Profil est obligatoire. <i class="fas fa-angry"></i>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-group m-2">
+    <button [routerLink]="['/admin/users/list']" class="btn btn-outline-primary float-left mb-2">Liste users</button>
+    <button  class="btn btn-outline-primary float-right mb-2" type="submit">Ajouter</button>
+  </div>
+
+</form>
+
+
+
+</div>

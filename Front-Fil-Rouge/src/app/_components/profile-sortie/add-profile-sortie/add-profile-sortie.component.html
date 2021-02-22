@@ -1,0 +1,19 @@
+<form novalidate class="form-group" #formCredentials="ngForm">
+
+  <div class="p-2 m-2">
+    <label for="libelle">Libellé Profil de sortie</label>
+    <input required class="form-control mb-2" #libelle= "ngModel" type="text"
+           name="libelle" [(ngModel)]="profileSortie.libelle" placeholder="Libelle" id="libelle"
+           #libelle="ngModel" [ngClass]="{'is-invalid': libelle.touched && !libelle.valid}"
+    >
+
+    <div class="form-control invalid-feedback">
+                <span *ngIf="libelle.errors">
+                  Profile de sortie non renseigné !!!
+                </span>
+    </div>
+    <button class="btn btn-outline-primary col- " type="submit">Ajouter un nouveau profil de sortie</button>
+
+  </div>
+
+</form>

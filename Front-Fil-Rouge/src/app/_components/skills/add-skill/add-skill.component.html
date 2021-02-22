@@ -1,0 +1,54 @@
+
+
+<div class="row">
+  <div class="col-md-12" id="editSkill">
+    <h2>Ajouter une competence</h2>
+<!--    <app-add-skill></app-add-skill>-->
+    <form novalidate class="form-group  m-2" [formGroup]="addSkillForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input required class=" form-control" type="text" formControlName="libelle"
+               placeholder="Libelle de la competence" id="libelle"
+        >
+        <div *ngIf="isValidInput('libelle')" class="text-danger">
+          Libelle invalide <i class="fas fa-angry"></i>
+        </div>
+      </div>
+      <div class="form-group">
+        <input required class=" form-control" type="text" formControlName="descriptif"
+               placeholder="Descriptif de la competence" id="descriptif"
+        >
+        <div *ngIf="isValidInput('descriptif')" class="text-danger">
+          Descriptif invalide <i class="fas fa-angry"></i>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center" >
+        <input type="text" name="niveau1" placeholder="niveau1" readonly="" class="text-center form-control col-2 mt-3">
+        <textarea type="text" formControlName="groupeAction1" placeholder="Groupes d'action niveau 1" class="text-center form-control col-4 m-1"></textarea>
+        <textarea type="text" formControlName="critereEvaluation1" placeholder="Critères d'évaluation niveau 1" class="text-center form-control col-4 m-1"></textarea>
+      </div>
+      <div class="form-group row justify-content-center" >
+        <input type="text" name="niveau2" placeholder="niveau2" readonly="" class="text-center form-control col-2 mt-3">
+        <textarea type="text" formControlName="groupeAction2" placeholder="Groupes d'action niveau 2" class="text-center form-control col-4 m-1"></textarea>
+        <textarea type="text" formControlName="critereEvaluation2" placeholder="Critères d'évaluation niveau 2" class="text-center form-control col-4 m-1"></textarea>
+      </div>
+      <div class="form-group row justify-content-center" >
+        <input type="text" name="niveau3" placeholder="niveau3" readonly="" class="text-center form-control col-2 mt-3">
+        <textarea type="text" formControlName="groupeAction3" placeholder="Groupes d'action niveau 3" class="text-center form-control col-4 m-1"></textarea>
+        <textarea type="text" formControlName="critereEvaluation3" placeholder="Critères d'évaluation niveau 3" class="text-center form-control col-4 m-1"></textarea>
+      </div>
+      <label>Affectez un groupe de competence à la competence à creer</label>
+
+      <ng-multiselect-dropdown
+        [placeholder]="'Les groupes de competences'"
+        [data]="dropdownList"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        formControlName="grpSkills"
+      >
+      </ng-multiselect-dropdown>
+      <button  class="btn btn-outline-primary mt-3 justify-content-center" type="submit" [innerHTML]="value()"></button>
+    </form>
+  </div>
+</div>

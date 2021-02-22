@@ -1,0 +1,52 @@
+<div class="accordion"  id="print-section" >
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapseOne'+referential.id" aria-expanded="true" aria-controls="collapseOne">
+          {{referential.libelle}}
+        </button>
+      </h5>
+    </div>
+
+    <div [id]="'collapseOne'+referential.id" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        {{referential.presentation}}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" [attr.data-target]="'#collapseTwo'+referential.id" aria-expanded="false" aria-controls="collapseTwo">
+          Groupes de competence
+        </button>
+      </h5>
+    </div>
+    <div [id]="'collapseTwo'+referential.id" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body scrollable">
+        <div *ngFor="let groupeCompetences of referential.groupeCompetences" class="alert alert-dismissible alert-secondary">
+          <strong >{{groupeCompetences.libelle}}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" [attr.data-target]="'#collapseThree'+referential.id" aria-expanded="false" aria-controls="collapseThree">
+          Critères d'admission
+        </button>
+      </h5>
+    </div>
+    <div [id]="'collapseThree'+referential.id" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        {{referential.critereAdmission}}
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-outline-info float-left"><i class="far fa-edit"></i></button>
+      <button printSectionId="print-section" ngxPrint class="btn btn-outline-danger float-right"><i class="fas fa-download"></i></button>
+    </div>
+  </div>
+
+</div>

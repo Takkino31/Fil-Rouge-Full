@@ -1,0 +1,62 @@
+<?php //%255BApp%255CEntity%255CApprenant%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\ApprenantRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get_apprenants' => [
+                        'method' => 'GET',
+                        'path' => '/apprenants',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:_students',
+                            ],
+                        ],
+                        'access_control' => '(is_granted(\'ROLE_CM\') or is_granted(\'ROLE_ADMIN\'))',
+                        'access_control_message' => 'Non accès à cette ressource',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_apprenant' => [
+                        'method' => 'GET',
+                        'path' => '/apprenant/{id}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:_student',
+                            ],
+                        ],
+                        'access_control' => '(is_granted(\'ROLE_CM\') or is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_APPRENANT\'))',
+                        'access_control_message' => 'Non accès à cette ressource',
+                    ],
+                    'put_apprenants' => [
+                        'method' => 'PUT',
+                        'path' => 'admin/users/{id}',
+                        'access_control' => '(is_granted(\'ROLE_CM\') or is_granted(\'ROLE_ADMIN\') or is_granted(\'ROLE_FORMATEUR\') or is_granted(\'ROLE_APPRENANT\'))',
+                        'access_control_message' => 'Non accès à cette ressource',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'deserialize' => false,
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

@@ -1,0 +1,72 @@
+<?php //%255BApp%255CEntity%255CGroupeApprenant%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\GroupeApprenantRepository',
+            ],
+            'collectionOperations' => [
+                1 => [
+                    'get_groupes' => [
+                        'method' => 'GET',
+                        'path' => '/groupes',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:_groupesApprenants',
+                            ],
+                        ],
+                    ],
+                    'get_groupes_apprenants' => [
+                        'method' => 'GET',
+                        'path' => '/groupes/apprenants',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:_grpAppApprenants',
+                            ],
+                        ],
+                    ],
+                    'post_grp_app' => [
+                        'method' => 'POST',
+                        'path' => '/groupes',
+                        'route_name' => 'post_grp_app',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get_grp_id' => [
+                        'method' => 'GET',
+                        'path' => '/groupes/{id}',
+                        'normalization_context' => [
+                            'groups' => [
+                                'read:_groupesApprenants_id',
+                            ],
+                        ],
+                    ],
+                    'delete_grp_id' => [
+                        'method' => 'DELETE',
+                        'path' => '/groupes/{id}',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'security' => 'is_granted(\'ROLE_ADMIN\')',
+                    'security_message' => 'Vous n\'avez pas accès à cette ressource',
+                    'route_prefix' => '/admin',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];
